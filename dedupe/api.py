@@ -1076,9 +1076,9 @@ class StaticMatching(Matching):
         super().__init__(num_cores, in_memory, **kwargs)
 
         #try:
-        self.data_model = pickle.load(settings_file)
-        self.classifier = pickle.load(settings_file)
-        self.predicates = pickle.load(settings_file)
+        self.data_model = pickle.load(settings_file, encoding='latin1')
+        self.classifier = pickle.load(settings_file, encoding='latin1')
+        self.predicates = pickle.load(settings_file, encoding='latin1')
         # except (KeyError, AttributeError):
         #     raise SettingsFileLoadingException(
         #         "This settings file is not compatible with "
